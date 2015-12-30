@@ -20,4 +20,5 @@
 	<import resource="/context/jpaBeanContext.xml"/>
 	<import resource="/context/springBeanContext.xml"/>
 	
+	<mvc:resources location="/resources/" mapping="/static/**"></mvc:resources>
 </beans>
