@@ -6,22 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Show Offers</title>
 </head>
 <body>
-	Hi from Gaurav
-	<c:out value="${surname}"></c:out>
-
-<%-- 
-	<sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost:3306/springMVCschema?autoReconnect=true"
-		user="root" password="password" />
-
-	<sql:query dataSource="${snapshot}" var="result">
-	SELECT * from offers;
-	</sql:query> --%>
-
-	<table border="1" width="100%">
+<table border="1" width="100%">
 		<tr>
 			<th>ID</th>
 			<th>Name</th>
@@ -38,7 +26,5 @@
 		</c:forEach>
 	</table>
 
-</body>
-</html>
 </body>
 </html>

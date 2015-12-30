@@ -14,11 +14,17 @@ public class OfferController {
 	@Resource(name="offerService")
 	private BaseService offerService;
 	
-	@RequestMapping("/")
-	public String sayHi(HttpSession session)
+	@RequestMapping("/offers")
+	public String showCurrentOffers(HttpSession session)
 	{
 		OffersList offersList = offerService.readAll();
 		session.setAttribute("offers", offersList.getOffersList());
-		return "Hellow";
+		return "ShowOffers";
+	}
+	
+	@RequestMapping("/addnewoffer")
+	public String addNewOffer()
+	{
+		return "AddNewOffer";
 	}
 }
