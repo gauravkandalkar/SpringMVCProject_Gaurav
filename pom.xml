@@ -92,11 +92,17 @@
 		</dependency>
 
 		<!-- dependecy for validation -->
-		<!-- Hibernate validator also includes validation-api jsr303 jar as transitive depenency -->
+		<!-- Hibernate validator also includes validation-api jsr303 jar as transitive 
+			depenency -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.2.2.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.4.0</version>
 		</dependency>
 
 

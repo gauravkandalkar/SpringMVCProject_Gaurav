@@ -30,12 +30,13 @@ public class OfferController {
 	}
 
 	@RequestMapping("/addnewoffer")
-	public String addNewOffer() {
-		return "AddNewOffer";
+	public String addNewOffer(Model model) {
+		model.addAttribute("offers", new Offers());
+		return "addnewoffer";
 	}
 
 	@RequestMapping(value = "/docreate", method = RequestMethod.POST)
-	public String docreate(Model model, @Valid Offers offer, BindingResult bindResults) 
+	public String docreate(Model model, @Valid Offers offers, BindingResult bindResults) 
 	{
 		if (bindResults.hasErrors()) {
 			List<ObjectError> errors = bindResults.getAllErrors();
@@ -44,11 +45,9 @@ public class OfferController {
 				System.out.println(error.getDefaultMessage());
 			}
 
-		} else {
-			System.out.println("validated properly");
+			return "addnewoffer";
 		}
 		
-		System.out.println(offer);
 		return "OfferCreated";
 	}
 }

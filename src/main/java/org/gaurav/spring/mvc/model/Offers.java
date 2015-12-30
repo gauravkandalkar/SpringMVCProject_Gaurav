@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.gaurav.spring.mvc.validator.ValidEmail;
 import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
 
 @Entity
@@ -18,8 +19,9 @@ public class Offers {
 	@Size(min = 5, max = 100, message = "Name must be between 5 and 100 charecters")
 	private String name;
 	
-	@NotNull
-	@Pattern(regexp=org.gaurav.spring.mvc.util.EmailValidator.EMAIL_PATTERN)
+	//@NotNull(message="invalid email")
+	//@Pattern(message="invalid email", regexp=org.gaurav.spring.mvc.util.EmailValidator.EMAIL_PATTERN)
+	@ValidEmail
 	private String email;
 	
 	@Size(min=10, max=500)

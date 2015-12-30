@@ -13,10 +13,10 @@
     -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 }
 .form-style-10 .inner-wrap{
-    padding: 30px;
+    padding:15px;
     background: #F8F8F8;
-    border-radius: 6px;
-    margin-bottom: 15px;
+    border-radius: 3px;
+    margin-bottom: 10px;
 }
 .form-style-10 h1{
     background: #2A88AD;
@@ -119,4 +119,11 @@
     margin-top: 10px;
     text-align: right;
 }
+.error{
+	font-size: small;
+	color: red;
+	margin-left: 10px;
+	
+}
+
 </style>
