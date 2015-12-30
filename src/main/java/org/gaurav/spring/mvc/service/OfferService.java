@@ -2,6 +2,7 @@ package org.gaurav.spring.mvc.service;
 
 import javax.annotation.Resource;
 
+import org.gaurav.spring.mvc.model.Offers;
 import org.gaurav.spring.mvc.model.OffersList;
 import org.gaurav.spring.mvc.repository.BaseRepository;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,10 @@ public class OfferService implements BaseService {
 	public OffersList readAll()
 	{
 		return offerRepository.readAll();
+	}
+
+	@Override
+	public void add(Offers offers) {
+		offerRepository.add(offers);
 	}
 }

@@ -2,6 +2,7 @@ package org.gaurav.spring.mvc.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -13,8 +14,8 @@ import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
 @Entity
 public class Offers {
 	@Id
-	@GeneratedValue
-	private String id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
 
 	@Size(min = 5, max = 100, message = "Name must be between 5 and 100 charecters")
 	private String name;
@@ -31,7 +32,7 @@ public class Offers {
 		return email;
 	}
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -47,7 +48,7 @@ public class Offers {
 		this.email = email;
 	}
 
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

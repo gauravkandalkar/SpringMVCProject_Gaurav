@@ -47,7 +47,7 @@ public class OfferController {
 
 			return "addnewoffer";
 		}
-		
+		offerService.add(offers);
 		return "OfferCreated";
 	}
 }
