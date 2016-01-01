@@ -19,6 +19,7 @@
 	
 	<import resource="/context/jpaBeanContext.xml"/>
 	<import resource="/context/springBeanContext.xml"/>
+	<import resource="/context/spring-security-config.xml"/>
 	
 	<mvc:resources location="/resources/" mapping="/static/**"></mvc:resources>
 </beans>

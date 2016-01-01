@@ -6,6 +6,7 @@ import javax.persistence.Query;
 
 import org.gaurav.spring.mvc.model.Offers;
 import org.gaurav.spring.mvc.model.OffersList;
+import org.hibernate.JDBCException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,7 +24,6 @@ public class OfferRepository implements BaseRepository {
 	@Override
 	public OffersList readAll() {
 		Query query = em.createQuery("Select f from Offers f");
-
 		OffersList offersList = new OffersList();
 		offersList.setOffersList(query.getResultList());
 		return offersList;

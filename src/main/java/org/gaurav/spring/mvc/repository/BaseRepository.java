@@ -5,8 +5,8 @@ import org.gaurav.spring.mvc.model.OffersList;
 
 public interface BaseRepository {
 
-	OffersList readAll();
+	OffersList readAll() ;
 
-	void add(Offers offers);
+	void add(Offers offers) ;
 
 }
