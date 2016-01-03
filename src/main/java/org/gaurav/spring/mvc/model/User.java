@@ -5,14 +5,13 @@ import javax.persistence.*;
 
 import java.util.List;
 
-
 /**
  * The persistent class for the users database table.
  * 
  */
 @Entity
-@Table(name="users")
-@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
+@Table(name = "users")
+@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -23,8 +22,10 @@ public class User implements Serializable {
 
 	private String password;
 
-	//bi-directional many-to-one association to UserRole
-	@OneToMany(mappedBy="user")
+	private String email;
+
+	// bi-directional many-to-one association to UserRole
+	@OneToMany(mappedBy = "user")
 	private List<UserRole> userRoles;
 
 	public User() {
@@ -42,8 +43,8 @@ public class User implements Serializable {
 		return this.enabled;
 	}
 
-	public void setEnabled(byte enabled) {
-		this.enabled = enabled;
+	public void setEnabled(byte b) {
+		this.enabled = b;
 	}
 
 	public String getPassword() {
@@ -74,6 +75,14 @@ public class User implements Serializable {
 		userRole.setUser(null);
 
 		return userRole;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

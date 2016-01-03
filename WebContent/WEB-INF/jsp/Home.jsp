@@ -21,8 +21,6 @@
 			Gaurav's <br> Webpage
 		</h1>
 
-		<h3 class="tagline">August 24&ndash;26th &mdash; Chicago, IL</h3>
-
 		<nav class="nav primary-nav">
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/">Home</a></li>
@@ -30,7 +28,7 @@
 						Current Offers</a></li>
 				<li><a href="${pageContext.request.contextPath}/addnewoffer">Add
 						New Offers</a></li>
-				<li><a href="register.html">Register</a></li>
+				<li><a href="${pageContext.request.contextPath}/newaccount">Register</a></li>
 			</ul>
 		</nav>
 
@@ -47,7 +45,7 @@
 
 		<p>under construction..............</p>
 
-		<a class="btn btn-alt" href="register.html">Register Now</a>
+		<a class="btn btn-alt" href=<c:url value="/newaccount"/>>Register Now</a>
 
 	</section>
 

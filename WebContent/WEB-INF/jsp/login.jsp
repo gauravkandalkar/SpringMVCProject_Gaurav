@@ -22,8 +22,6 @@
 			Gaurav's <br> Webpage
 		</h1>
 
-		<h3 class="tagline">August 24&ndash;26th &mdash; Chicago, IL</h3>
-
 		<nav class="nav primary-nav">
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/">Home</a></li>
@@ -31,7 +29,7 @@
 						Current Offers</a></li>
 				<li><a href="${pageContext.request.contextPath}/addnewoffer">Add
 						New Offers</a></li>
-				<li><a href="register.html">Register</a></li>
+				<li><a href="${pageContext.request.contextPath}/newaccount">Register</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -60,9 +58,14 @@
 					</div>
 
 					<div class="button-section">
-						<input name="submit" type="submit" value="Login" />
+						<input name="submit" type="submit" value="Login" />					
 					</div>
-
+					<br/>
+					<br/>
+					<h3> Or Create new Account</h3>
+						<!-- <input name="submit" type="submit" value="SingUp" /> -->
+					<a href=<c:url value="/newaccount"/>>Register Now</a>
+	
 					 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				</sf:form>
 			</div>

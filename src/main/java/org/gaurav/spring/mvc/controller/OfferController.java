@@ -7,15 +7,11 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.gaurav.spring.mvc.model.Offers;
-import org.gaurav.spring.mvc.model.OffersList;
 import org.gaurav.spring.mvc.service.BaseService;
-import org.hibernate.JDBCException;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -27,8 +23,8 @@ public class OfferController {
 
 	@RequestMapping("/offers")
 	public String showCurrentOffers(HttpSession session) {
-		OffersList offersList = offerService.readAll();
-		session.setAttribute("offers", offersList.getOffersList());
+		List<Offers> offersList = offerService.readAll();
+		session.setAttribute("offers", offersList);
 		//throw new JDBCException("test", null);
 		return "ShowOffers";
 	}

@@ -1,5 +1,7 @@
 package org.gaurav.spring.mvc.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -11,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository("offerRepository")
-public class OfferRepository implements BaseRepository {
+public class OfferRepository implements BaseRepository<Offers> {
 
 	@PersistenceContext
 	private EntityManager em;
@@ -22,11 +24,11 @@ public class OfferRepository implements BaseRepository {
 	 * @see org.gaurav.spring.mvc.repository.Repository#readAll()
 	 */
 	@Override
-	public OffersList readAll() {
+	public List<Offers> readAll() {
 		Query query = em.createQuery("Select f from Offers f");
 		OffersList offersList = new OffersList();
 		offersList.setOffersList(query.getResultList());
-		return offersList;
+		return offersList.getOffersList();
 	}
 
 	@Transactional

@@ -1,12 +1,11 @@
 package org.gaurav.spring.mvc.service;
 
-import org.gaurav.spring.mvc.model.Offers;
-import org.gaurav.spring.mvc.model.OffersList;
+import java.util.List;
 
-public interface BaseService {
+public interface BaseService<T> {
 
-	OffersList readAll();
+	List<T> readAll();
 
-	void add(Offers offers);
+	void add(T entity);
 
 }

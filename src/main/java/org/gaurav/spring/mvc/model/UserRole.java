@@ -16,6 +16,7 @@ public class UserRole implements Serializable {
 
 	@Id
 	@Column(name="user_role_id")
+	@GeneratedValue
 	private int userRoleId;
 
 	private String role;
